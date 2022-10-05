@@ -1,29 +1,34 @@
 class Data {
-	private String name;
-	private Test score;
-	public Data(String str) {
-		name = str;
-		score = new Test();
-	}
-	private class Test{
-		int english;
-		int math;
-	}
-	public void setScore(int eng, int m) {
-		score.english = eng;
-		score.math = m;
-	}
-	public String getScore() {
-		return "name:" + name + " english=" + score.english + " math=" + score.math + " avg=" + String.format("%.1f",(score.english + score.math) / 2);
-	}
+   private String name;
+   private Test score;
+
+   class Test {
+      private int english;
+      private int math;
+      public Test(int eng, int m) {
+         english = eng;
+         math = m;
+      }
+      public double avg() {
+         return (english + math) / 2.0;
+      }
+   }
+   public Data(String n, int eng, int m) {
+      name = n;
+      score = new Test(eng, m);
+   }
+   public void show() {
+      System.out.print("name:" + name);
+      System.out.print(" english=" + score.english);
+      System.out.print(" math=" + score.math);
+      System.out.println(" avg=" + score.avg());
+   }
 }
-class Test {
-	public static void main(String[] args) {
-		Data Annie = new Data("Annie");
-		Data Brian = new Data("Brian");
-		Annie.setScore(85, 92);
-		System.out.println(Annie.getScore());
-		Brian.setScore(77, 56);
-		System.out.println(Brian.getScore());
-	}
+public class Main {
+   public static void main(String args[]) {
+      Data student1 = new Data("Annie", 85, 92);
+      student1.show();
+      Data student2 = new Data("Brian", 77, 56);
+      student2.show();
+   }
 }
