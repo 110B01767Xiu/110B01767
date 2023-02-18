@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		double h, w, BMI;
+		System.out.print("請輸入身高(m)及體重(kg):");
+		h = sc.nextDouble();
+		w = sc.nextDouble();
+		BMI = w / (h * h);
+		if (BMI < 18.5) {
+			System.out.println("體重過輕");
+		}
+		else if (BMI >= 18.5 || BMI < 24) {
+			System.out.println("健康體位");
+		}
+		else if (BMI >= 24 || BMI < 27){
+			System.out.println("體位異常:過重");
+		}
+		else if (BMI >= 27 || BMI < 30){
+			System.out.println("體位異常:輕度肥胖");
+		}
+		else if (BMI >= 30 || BMI < 35){
+			System.out.println("體位異常:中度肥胖");
+		}
+		else if (BMI >= 35){
+			System.out.println("體位異常:重度肥胖");
+		}
+	}
+}
