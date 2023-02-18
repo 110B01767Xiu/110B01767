@@ -12,16 +12,16 @@ public class Main {
 		if (BMI < 18.5) {
 			System.out.println("體重過輕");
 		}
-		else if (BMI >= 18.5 || BMI < 24) {
+		else if (BMI >= 18.5 && BMI < 24) {
 			System.out.println("健康體位");
 		}
-		else if (BMI >= 24 || BMI < 27){
+		else if (BMI >= 24 && BMI < 27){
 			System.out.println("體位異常:過重");
 		}
-		else if (BMI >= 27 || BMI < 30){
+		else if (BMI >= 27 && BMI < 30){
 			System.out.println("體位異常:輕度肥胖");
 		}
-		else if (BMI >= 30 || BMI < 35){
+		else if (BMI >= 30 && BMI < 35){
 			System.out.println("體位異常:中度肥胖");
 		}
 		else if (BMI >= 35){
